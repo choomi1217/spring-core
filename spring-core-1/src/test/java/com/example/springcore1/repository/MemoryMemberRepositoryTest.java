@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class MemoryMemberRepositoryTest {
 
-    MemoryMemberRepository repository = new MemoryMemberRepository();
+    MemberRepository repository = new MemoryMemberRepository();
 
     @AfterEach
     public void afterEach() {
