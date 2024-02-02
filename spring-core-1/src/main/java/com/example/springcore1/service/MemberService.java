@@ -2,13 +2,17 @@ package com.example.springcore1.service;
 
 import com.example.springcore1.domain.Member;
 import com.example.springcore1.repository.MemberRepository;
-import com.example.springcore1.repository.MemoryMemberRepository;
 import java.util.List;
 import java.util.Optional;
 
 public class MemberService {
 
-    private final MemberRepository memberRepository = new MemoryMemberRepository();
+    private final MemberRepository memberRepository;
+
+    public MemberService(MemberRepository memberRepository) {
+        this.memberRepository = memberRepository;
+    }
+
 
     public Long join(Member member) {
 
