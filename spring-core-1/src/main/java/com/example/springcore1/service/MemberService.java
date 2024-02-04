@@ -4,7 +4,9 @@ import com.example.springcore1.domain.Member;
 import com.example.springcore1.repository.MemberRepository;
 import java.util.List;
 import java.util.Optional;
+import org.springframework.stereotype.Service;
 
+@Service
 public class MemberService {
 
     private final MemberRepository memberRepository;
@@ -14,12 +16,9 @@ public class MemberService {
     }
 
 
-    public Long join(Member member) {
-
+    public Member join(Member member) {
         validateDuplicateMember(member);
-
-        memberRepository.save(member);
-        return member.getId();
+        return memberRepository.save(member);
     }
 
     private void validateDuplicateMember(Member member) {

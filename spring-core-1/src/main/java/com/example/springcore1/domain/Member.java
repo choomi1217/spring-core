@@ -1,8 +1,16 @@
 package com.example.springcore1.domain;
 
 public class Member {
+
     private Long id;
     private String name;
+
+    public Member() {
+    }
+
+    public Member(String name) {
+        this.name = name;
+    }
 
     public Long getId() {
         return id;

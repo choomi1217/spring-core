@@ -24,7 +24,7 @@ class MemberServiceTest {
         Member member = new Member();
         member.setName("spring");
 
-        Long saveId = memberService.join(member);
+        Long saveId = memberService.join(member).getId();
 
         Member findMember = memberService.findOne(saveId).get();
         assertEquals(member.getName(), findMember.getName());
