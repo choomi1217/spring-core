@@ -9,7 +9,7 @@ import java.util.Optional;
 import java.util.concurrent.atomic.AtomicLong;
 import org.springframework.stereotype.Repository;
 
-@Repository
+//@Repository
 public class MemoryMemberRepository implements MemberRepository {
 
     private static Map<Long, Member> store = new HashMap<>();

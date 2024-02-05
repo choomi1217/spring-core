@@ -9,10 +9,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import javax.sql.DataSource;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.datasource.DataSourceUtils;
 import org.springframework.stereotype.Repository;
 
-@Repository
+//@Repository
 public class JdbcMemberRepository implements MemberRepository {
 
     private final DataSource dataSource;
@@ -127,10 +128,6 @@ public class JdbcMemberRepository implements MemberRepository {
 
     }
 
-    @Override
-    public void clearStore() {
-
-    }
 
     private void close(Connection conn, PreparedStatement pstmt, ResultSet rs) {
 
