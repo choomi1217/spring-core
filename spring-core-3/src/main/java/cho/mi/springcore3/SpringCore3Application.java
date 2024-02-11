@@ -14,9 +14,4 @@ public class  SpringCore3Application {
         SpringApplication.run(SpringCore3Application.class, args);
     }
 
-    @Bean
-    InternalResourceViewResolver internalResourceViewResolver() {
-        return new InternalResourceViewResolver("/WEB-INF/views/", ".jsp");
-    }
-
 }

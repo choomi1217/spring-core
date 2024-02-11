@@ -7,7 +7,7 @@ import java.io.IOException;
 import org.springframework.stereotype.Component;
 import org.springframework.web.HttpRequestHandler;
 
-@Component("/springmvc/old-controller")
+@Component("/springmvc/http-handler")
 public class MyHttpRequestHandler implements HttpRequestHandler {
 
     @Override
