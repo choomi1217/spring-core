@@ -12,3 +12,4 @@
 # 뷰를 분리
 ![img.png](뷰를 분리하자1.png)
 
+![img.png](img.png)
