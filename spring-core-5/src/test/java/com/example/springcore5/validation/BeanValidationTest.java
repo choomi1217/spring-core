@@ -1,18 +1,12 @@
 package com.example.springcore5.validation;
 
-import com.example.springcore5.itemservice.domain.item.Item;
-import hello.itemservice.domain.item.Item;
+import domain.item.Item;
 import jakarta.validation.ConstraintViolation;
 import jakarta.validation.Validation;
 import jakarta.validation.Validator;
 import jakarta.validation.ValidatorFactory;
-import org.junit.jupiter.api.Test;
-
-import javax.validation.ConstraintViolation;
-import javax.validation.Validation;
-import javax.validation.Validator;
-import javax.validation.ValidatorFactory;
 import java.util.Set;
+import org.junit.jupiter.api.Test;
 
 public class BeanValidationTest {
 

@@ -12,13 +12,13 @@ public class MessageCodesResolverTest {
 
     @Test
     void messageCodesResolverObject() {
-        String[] messageCodes = codesResolver.resolveMessageCodes("required", "item");
+        String[] messageCodes = codesResolver.resolveMessageCodes("required", "domain/item");
         assertThat(messageCodes).containsExactly("required.item", "required");
     }
 
     @Test
     void messageCodesResolverField() {
-        String[] messageCodes = codesResolver.resolveMessageCodes("required", "item", "itemName", String.class);
+        String[] messageCodes = codesResolver.resolveMessageCodes("required", "domain/item", "itemName", String.class);
         assertThat(messageCodes).containsExactly(
                 "required.item.itemName",
                 "required.itemName",

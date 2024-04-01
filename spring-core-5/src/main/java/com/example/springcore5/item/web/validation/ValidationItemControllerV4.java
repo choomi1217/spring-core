@@ -1,9 +1,9 @@
-package com.example.springcore5.itemservice.web.validation;
+package com.example.springcore5.item.web.validation;
 
-import com.example.springcore5.itemservice.domain.item.Item;
-import com.example.springcore5.itemservice.domain.item.ItemRepository;
-import com.example.springcore5.itemservice.web.validation.form.ItemSaveForm;
-import com.example.springcore5.itemservice.web.validation.form.ItemUpdateForm;
+import domain.item.Item;
+import domain.item.ItemRepository;
+import com.example.springcore5.item.web.validation.form.ItemSaveForm;
+import com.example.springcore5.item.web.validation.form.ItemUpdateForm;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;

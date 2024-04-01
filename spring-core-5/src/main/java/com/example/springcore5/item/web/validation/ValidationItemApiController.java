@@ -1,6 +1,6 @@
-package com.example.springcore5.itemservice.web.validation;
+package com.example.springcore5.item.web.validation;
 
-import com.example.springcore5.itemservice.web.validation.form.ItemSaveForm;
+import com.example.springcore5.item.web.validation.form.ItemSaveForm;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;

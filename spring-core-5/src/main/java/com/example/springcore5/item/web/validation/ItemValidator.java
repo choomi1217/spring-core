@@ -1,6 +1,6 @@
-package com.example.springcore5.itemservice.web.validation;
+package com.example.springcore5.item.web.validation;
 
-import com.example.springcore5.itemservice.domain.item.Item;
+import domain.item.Item;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 import org.springframework.validation.Errors;

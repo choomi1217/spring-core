@@ -1,7 +1,7 @@
-package com.example.springcore5.itemservice;
+package com.example.springcore5.item;
 
-import com.example.springcore5.itemservice.domain.item.Item;
-import com.example.springcore5.itemservice.domain.item.ItemRepository;
+import domain.item.Item;
+import domain.item.ItemRepository;
 import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;

@@ -1,4 +1,4 @@
-package com.example.springcore5.itemservice.domain.item;
+package domain.item;
 
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.NotBlank;

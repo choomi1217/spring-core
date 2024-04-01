@@ -1,4 +1,4 @@
-package com.example.springcore5.itemservice.web.validation.form;
+package com.example.springcore5.item.web.validation.form;
 
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.NotBlank;
