@@ -1,7 +1,7 @@
 package com.example.springcore5.item.web.validation;
 
-import domain.item.Item;
-import domain.item.ItemRepository;
+import com.example.springcore5.item.domain.item.Item;
+import com.example.springcore5.item.domain.item.ItemRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;

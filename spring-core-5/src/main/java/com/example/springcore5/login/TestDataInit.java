@@ -1,9 +1,9 @@
 package com.example.springcore5.login;
 
-import domain.item.Item;
-import domain.item.ItemRepository;
-import domain.member.Member;
-import domain.member.MemberRepository;
+import com.example.springcore5.item.domain.item.Item;
+import com.example.springcore5.item.domain.item.ItemRepository;
+import com.example.springcore5.member.domain.Member;
+import com.example.springcore5.member.domain.MemberRepository;
 import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;

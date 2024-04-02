@@ -1,6 +1,6 @@
 package com.example.springcore5.validation;
 
-import domain.item.Item;
+import com.example.springcore5.item.domain.item.Item;
 import jakarta.validation.ConstraintViolation;
 import jakarta.validation.Validation;
 import jakarta.validation.Validator;

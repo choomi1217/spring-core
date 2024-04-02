@@ -1,4 +1,4 @@
-package domain.member;
+package com.example.springcore5.member.domain;
 
 import jakarta.validation.constraints.NotEmpty;
 import lombok.Data;

@@ -1,4 +1,4 @@
-package domain.member;
+package com.example.springcore5.member.domain;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -12,8 +12,8 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class MemberRepository {
 
-    private static Map<Long, Member> store = new HashMap<>();
-    private static long sequence = 0L;
+    private static Map<Long, Member> store = new HashMap<>(); //static 사용
+    private static long sequence = 0L;//static 사용
 
     public Member save(Member member) {
         member.setId(++sequence);
@@ -27,9 +27,9 @@ public class MemberRepository {
     }
 
     public Optional<Member> findByLoginId(String loginId) {
-        return store.values().stream()
-            .filter(member -> member.getLoginId().equals(loginId))
-            .findAny();
+        return findAll().stream()
+            .filter(m -> m.getLoginId().equals(loginId))
+            .findFirst();
     }
 
     public List<Member> findAll() {
@@ -39,5 +39,4 @@ public class MemberRepository {
     public void clearStore() {
         store.clear();
     }
-
 }

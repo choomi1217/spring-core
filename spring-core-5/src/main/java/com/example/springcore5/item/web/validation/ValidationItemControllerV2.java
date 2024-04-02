@@ -1,7 +1,7 @@
 package com.example.springcore5.item.web.validation;
 
-import domain.item.Item;
-import domain.item.ItemRepository;
+import com.example.springcore5.item.domain.item.Item;
+import com.example.springcore5.item.domain.item.ItemRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
@@ -56,20 +56,20 @@ public class ValidationItemControllerV2 {
 
         //검증 로직
         if (!StringUtils.hasText(item.getItemName())) {
-            bindingResult.addError(new FieldError("domain/item", "itemName", "상품 이름은 필수 입니다."));
+            bindingResult.addError(new FieldError("com/example/springcore5/item/domain/item", "itemName", "상품 이름은 필수 입니다."));
         }
         if (item.getPrice() == null || item.getPrice() < 1000 || item.getPrice() > 1000000) {
-            bindingResult.addError(new FieldError("domain/item", "price", "가격은 1,000 ~ 1,000,000 까지 허용합니다."));
+            bindingResult.addError(new FieldError("com/example/springcore5/item/domain/item", "price", "가격은 1,000 ~ 1,000,000 까지 허용합니다."));
         }
         if (item.getQuantity() == null || item.getQuantity() >= 9999) {
-            bindingResult.addError(new FieldError("domain/item", "quantity", "수량은 최대 9,999 까지 허용합니다."));
+            bindingResult.addError(new FieldError("com/example/springcore5/item/domain/item", "quantity", "수량은 최대 9,999 까지 허용합니다."));
         }
 
         //특정 필드가 아닌 복합 룰 검증
         if (item.getPrice() != null && item.getQuantity() != null) {
             int resultPrice = item.getPrice() * item.getQuantity();
             if (resultPrice < 10000) {
-                bindingResult.addError(new ObjectError("domain/item", "가격 * 수량의 합은 10,000원 이상이어야 합니다. 현재 값 = " + resultPrice));
+                bindingResult.addError(new ObjectError("com/example/springcore5/item/domain/item", "가격 * 수량의 합은 10,000원 이상이어야 합니다. 현재 값 = " + resultPrice));
             }
         }
 
@@ -91,20 +91,20 @@ public class ValidationItemControllerV2 {
 
         //검증 로직
         if (!StringUtils.hasText(item.getItemName())) {
-            bindingResult.addError(new FieldError("domain/item", "itemName", item.getItemName(), false, null, null, "상품 이름은 필수 입니다."));
+            bindingResult.addError(new FieldError("com/example/springcore5/item/domain/item", "itemName", item.getItemName(), false, null, null, "상품 이름은 필수 입니다."));
         }
         if (item.getPrice() == null || item.getPrice() < 1000 || item.getPrice() > 1000000) {
-            bindingResult.addError(new FieldError("domain/item", "price", item.getPrice(), false, null, null, "가격은 1,000 ~ 1,000,000 까지 허용합니다."));
+            bindingResult.addError(new FieldError("com/example/springcore5/item/domain/item", "price", item.getPrice(), false, null, null, "가격은 1,000 ~ 1,000,000 까지 허용합니다."));
         }
         if (item.getQuantity() == null || item.getQuantity() >= 9999) {
-            bindingResult.addError(new FieldError("domain/item", "quantity", item.getQuantity(), false, null ,null, "수량은 최대 9,999 까지 허용합니다."));
+            bindingResult.addError(new FieldError("com/example/springcore5/item/domain/item", "quantity", item.getQuantity(), false, null ,null, "수량은 최대 9,999 까지 허용합니다."));
         }
 
         //특정 필드가 아닌 복합 룰 검증
         if (item.getPrice() != null && item.getQuantity() != null) {
             int resultPrice = item.getPrice() * item.getQuantity();
             if (resultPrice < 10000) {
-                bindingResult.addError(new ObjectError("domain/item",null ,null, "가격 * 수량의 합은 10,000원 이상이어야 합니다. 현재 값 = " + resultPrice));
+                bindingResult.addError(new ObjectError("com/example/springcore5/item/domain/item",null ,null, "가격 * 수량의 합은 10,000원 이상이어야 합니다. 현재 값 = " + resultPrice));
             }
         }
 
@@ -126,20 +126,20 @@ public class ValidationItemControllerV2 {
 
         //검증 로직
         if (!StringUtils.hasText(item.getItemName())) {
-            bindingResult.addError(new FieldError("domain/item", "itemName", item.getItemName(), false, new String[]{"required.item.itemName"}, null, null));
+            bindingResult.addError(new FieldError("com/example/springcore5/item/domain/item", "itemName", item.getItemName(), false, new String[]{"required.item.itemName"}, null, null));
         }
         if (item.getPrice() == null || item.getPrice() < 1000 || item.getPrice() > 1000000) {
-            bindingResult.addError(new FieldError("domain/item", "price", item.getPrice(), false, new String[]{"range.item.price"}, new Object[]{1000, 1000000}, null));
+            bindingResult.addError(new FieldError("com/example/springcore5/item/domain/item", "price", item.getPrice(), false, new String[]{"range.item.price"}, new Object[]{1000, 1000000}, null));
         }
         if (item.getQuantity() == null || item.getQuantity() >= 9999) {
-            bindingResult.addError(new FieldError("domain/item", "quantity", item.getQuantity(), false, new String[]{"max.item.quantity"} ,new Object[]{9999}, null));
+            bindingResult.addError(new FieldError("com/example/springcore5/item/domain/item", "quantity", item.getQuantity(), false, new String[]{"max.item.quantity"} ,new Object[]{9999}, null));
         }
 
         //특정 필드가 아닌 복합 룰 검증
         if (item.getPrice() != null && item.getQuantity() != null) {
             int resultPrice = item.getPrice() * item.getQuantity();
             if (resultPrice < 10000) {
-                bindingResult.addError(new ObjectError("domain/item",new String[]{"totalPriceMin"} ,new Object[]{10000, resultPrice}, null));
+                bindingResult.addError(new ObjectError("com/example/springcore5/item/domain/item",new String[]{"totalPriceMin"} ,new Object[]{10000, resultPrice}, null));
             }
         }
 

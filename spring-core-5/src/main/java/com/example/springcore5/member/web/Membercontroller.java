@@ -1,7 +1,7 @@
 package com.example.springcore5.member.web;
 
-import domain.member.Member;
-import domain.member.MemberRepository;
+import com.example.springcore5.member.domain.Member;
+import com.example.springcore5.member.domain.MemberRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;

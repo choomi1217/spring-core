@@ -1,4 +1,4 @@
-package domain.item;
+package com.example.springcore5.item.domain.item;
 
 import org.springframework.stereotype.Repository;
 

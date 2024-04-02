@@ -1,7 +1,7 @@
 package com.example.springcore5.item.web.message;
 
-import domain.item.Item;
-import domain.item.ItemRepository;
+import com.example.springcore5.item.domain.item.Item;
+import com.example.springcore5.item.domain.item.ItemRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

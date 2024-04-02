@@ -1,10 +1,10 @@
 package com.example.springcore5.item.web.validation;
 
 
-import domain.item.Item;
-import domain.item.ItemRepository;
-import domain.item.SaveCheck;
-import domain.item.UpdateCheck;
+import com.example.springcore5.item.domain.item.Item;
+import com.example.springcore5.item.domain.item.ItemRepository;
+import com.example.springcore5.item.domain.item.SaveCheck;
+import com.example.springcore5.item.domain.item.UpdateCheck;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

@@ -12,13 +12,15 @@ public class MessageCodesResolverTest {
 
     @Test
     void messageCodesResolverObject() {
-        String[] messageCodes = codesResolver.resolveMessageCodes("required", "domain/item");
+        String[] messageCodes = codesResolver.resolveMessageCodes("required",
+            "com/example/springcore5/item/domain/item");
         assertThat(messageCodes).containsExactly("required.item", "required");
     }
 
     @Test
     void messageCodesResolverField() {
-        String[] messageCodes = codesResolver.resolveMessageCodes("required", "domain/item", "itemName", String.class);
+        String[] messageCodes = codesResolver.resolveMessageCodes("required",
+            "com/example/springcore5/item/domain/item", "itemName", String.class);
         assertThat(messageCodes).containsExactly(
                 "required.item.itemName",
                 "required.itemName",
