@@ -1,11 +1,13 @@
 package com.example.springcore5.login.web;
 
 import com.example.springcore5.login.LoginService;
+import com.example.springcore5.session.SessionConst;
 import com.example.springcore5.session.SessionManager;
 import com.example.springcore5.member.domain.Member;
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -47,7 +49,7 @@ public class LoginController {
         }
     }
 
-    @PostMapping("/login")
+    //@PostMapping("/login")
     public String loginV2(@Valid @ModelAttribute("loginForm") LoginForm form, BindingResult bindingResult, HttpServletResponse response) {
         if (bindingResult.hasErrors()) {
             return "login/loginForm";
@@ -64,15 +66,43 @@ public class LoginController {
         }
     }
 
+    @PostMapping("/login")
+    public String loginV3(@Valid @ModelAttribute("loginForm") LoginForm form, BindingResult bindingResult, HttpServletRequest request) {
+        if (bindingResult.hasErrors()) {
+            return "login/loginForm";
+        }
+
+        try {
+            Member logined = loginService.login(form.getLoginId(), form.getPassword());
+
+            HttpSession session = request.getSession();
+            session.setAttribute(SessionConst.LOGIN_MEMBER, logined);
+
+            return "redirect:/";
+        } catch (IllegalStateException e) {
+            bindingResult.reject("loginFail", "아이디 또는 비밀번호가 맞지 않습니다.");
+            return "login/loginForm";
+        }
+    }
+
     //@GetMapping("/logout")
     public String logout(HttpServletResponse response) {
         expireCookie(response);
         return "redirect:/";
     }
 
-    @GetMapping("/logout")
+    //@GetMapping("/logout")
     public String logoutV2(HttpServletRequest request, HttpServletResponse response) {
         sessionManager.expire(request);
+        return "redirect:/";
+    }
+
+    @GetMapping("/logout")
+    public String logoutV3(HttpServletRequest request) {
+        HttpSession session = request.getSession();
+        if(session != null) {
+            session.invalidate();
+        }
         return "redirect:/";
     }
 

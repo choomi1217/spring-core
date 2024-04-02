@@ -2,8 +2,10 @@ package com.example.springcore5.login.web;
 
 import com.example.springcore5.member.domain.Member;
 import com.example.springcore5.member.domain.MemberRepository;
+import com.example.springcore5.session.SessionConst;
 import com.example.springcore5.session.SessionManager;
 import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -33,9 +35,26 @@ public class LoginHomeController {
         return "loginHome";
     }
 
-    @GetMapping("/")
+    //@GetMapping("/")
     public String loginHomeV2(HttpServletRequest request, Model model) {
         Member member = (Member) sessionManager.getSession(request);
+        if (member == null) {
+            return "home";
+        }
+
+        model.addAttribute("member", member);
+        return "loginHome";
+    }
+
+    @GetMapping("/")
+    public String loginHomeV3(HttpServletRequest request, Model model) {
+        HttpSession session = request.getSession(false);
+
+        if (session == null) {
+            return "home";
+        }
+
+        Member member = (Member) session.getAttribute(SessionConst.LOGIN_MEMBER);
         if (member == null) {
             return "home";
         }
